@@ -1,15 +1,24 @@
 # Back End
 
 Base API Link
+https://expat-journal-bw.herokuapp.com/
 
 Endpoints ->
 
 base url /api/expat/auth
 
-| Request | URL       | Description               |
-| ------- | --------- | ------------------------- |
-| POST    | /register | Registers new User        |
-| POST    | /login    | Login as an existing User |
+| Request | URL              | Description                          |
+| ------- | ---------------- | ------------------------------------ |
+| POST    | /register        | Registers new User                   |
+| POST    | /login           | Login as an existing User            |
+| GET     | /users           | Returns list of users                |
+| GET     | /user/:id        | Returns a sinlge user by ID          |
+| GET     | /posts           | Returns list of posts                |
+| GET     | /post/:id        | Returns single post by ID            |
+| GET     | /postsbyuser/:id | Returns list of posts by single user |
+| POST    | /posts           | Creates a new post                   |
+| PUT     | /post/:id        | Updates an existing post             |
+| DELETE  | /post/:id        | Deletes an existing post             |
 
 Users
 
