@@ -20,7 +20,7 @@ exports.up = function (knex) {
 			tbl.integer("rating").notNullable();
 			tbl.text("location");
 			tbl.text("contact");
-			tbl.date("date");
+			tbl.text("date");
 			tbl.text("notes");
 		});
 };
