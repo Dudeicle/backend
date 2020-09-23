@@ -55,15 +55,19 @@ router.get("/post/:id", (req, res) => {
 			res.status(404).json({ message: "cannot find list of users" });
 		});
 }); // WORKING
-router.get("/postsbyuser/:id", (req, res) => {
+router.get("/user/:id/posts", (req, res) => {
 	const id = req.params.id;
 
 	ExpatJournal.getPostsByUserID(id)
 		.then((posts) => {
-			res.status(201).json(posts);
+			if (posts.length === 0) {
+				res.status(404).json({ message: "This user does not have any posts!" });
+			} else {
+				res.status(201).json(posts);
+			}
 		})
 		.catch((error) => {
-			res.status(404).json({ message: "This user does not have any posts!" });
+			res.status(404).json({ message: "Could not find the User of specified ID" });
 		});
 }); // WORKING
 
